@@ -1,0 +1,50 @@
+{
+    "configurations": [
+        {
+            "name": "Python File - Deep",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "justMyCode": false
+        },
+        {
+            "name": "Python File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+        },
+        {
+            "name": "Python File - Just My Code",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "justMyCode": true
+        },
+        {
+            "name": "Python File - MTK Only",
+            "type": "python",
+            "request": "launch",
+            "module": "gismigrationtoolkit"
+        },
+        {
+            "name": "Python: Args",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "install",
+                "--username",
+                "dyaw_Arch",
+                "--password",
+                "move2redlands",
+                "--item",
+                "edfd95f15c3746149d940dc2ff5e48ad",
+            ],
+            "purpose": [
+                "debug-in-terminal"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll": true,
+            "source.organizeImports": true
+        },
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "cSpell.words": ["portalgroup"],
+    "github.copilot.enable": {
+        "*": true,
+        "markdown": true,
+        "plaintext": true,
+        "yaml": true
+    },
+    "python.analysis.completeFunctionParens": true,
+    "python.formatting.provider": "black",
+    "python.linting.enabled": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+
+    "python.formatting.blackArgs": ["--line-length", "88"],
+    "editor.formatOnSave": true,
+    "python.linting.pylintEnabled": true,
+    "isort.args": ["--profile", "black"],
+    "python.linting.pylintArgs": ["--max-line-length=88", "--disable=W1514"],
+    "autoDocstring.docstringFormat": "sphinx",
+    "esbonio.sphinx.confDir": ""
+}
