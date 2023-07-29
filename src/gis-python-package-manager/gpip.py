@@ -7,21 +7,6 @@ from zipfile import ZipFile
 from distutils.sysconfig import get_python_lib
 
 
-class StoreDictKeyPair(argparse.Action):
-    def __init__(self, option_strings, dest, nargs=None, **kwargs):
-        self._nargs = nargs
-        super(StoreDictKeyPair, self).__init__(
-            option_strings, dest, nargs=nargs, **kwargs
-        )
-
-    def __call__(self, parser, namespace, values, option_string=None):
-        my_dict = {}
-        for kv in values:
-            k, v = kv.split("=")
-            my_dict[k] = v
-        setattr(namespace, self.dest, my_dict)
-
-
 def main():
     site_packages_dir = get_python_lib()
 
@@ -161,7 +146,12 @@ def main():
             print("Item ID or URL is required.")
             exit(1)
 
-        item = Item(args.conn, args.item)
+        try:
+            item = Item(args.conn, args.item)
+        except Exception as e:
+            print("Error getting item from ArcGIS Online or Portal.")
+            print(e)
+            exit(1)
 
         if item.type != "Code Sample":
             print("Item must be a Code Attachment.")
@@ -180,7 +170,13 @@ def main():
             exit(1)
 
         print("Installing package...")
-        subprocess.check_call(["pip", "install", extract_path])
+
+        try:
+            subprocess.check_call(["pip", "install", extract_path])
+        except subprocess.CalledProcessError as e:
+            print("Error installing package.")
+            print(e)
+            exit(1)
 
         print("Package installed successfully.")
 
