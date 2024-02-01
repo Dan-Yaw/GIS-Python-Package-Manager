@@ -30,3 +30,5 @@ Use the argument --gis to pass in a dictionary directly to the ArcGIS API's gis.
 gpip install edfd95f15c3746149d940dc2ff5e48ad --gis '{"username":"myusername","password":"mypassword","client_id":"myclientid","client_secret":"myclientsecret"}'
 ```
 
+#### Disclaimer
+*This repo and this development is entirely seperate from my work at Esri. It was created and tested on personal equipment with a personal ArcGIS Online account.*
